@@ -1,0 +1,152 @@
+:root {
+  --bg: #161a23;
+  --panel: #1f2533;
+  --carta-bg: #222838;
+  --carta-borde: #323a4d;
+  --neon: #39ff88;
+  --violeta: #7c5cff;
+  --texto: #e8eaf0;
+  --texto-tenue: #8a93a8;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--texto);
+  font-family: "Segoe UI", Roboto, Arial, sans-serif;
+  min-height: 100vh;
+}
+
+/* ---------- TITULO ---------- */
+.titulo-juego {
+  font-family: "Press Start 2P", cursive;
+  font-size: 1.6rem;
+  color: var(--neon);
+  text-shadow: 0 0 10px rgba(57, 255, 136, 0.45);
+  letter-spacing: 2px;
+}
+
+.titulo-juego i {
+  color: var(--violeta);
+}
+
+.subtitulo {
+  color: var(--texto-tenue);
+  font-size: 0.95rem;
+  margin-top: 8px;
+}
+
+/* ---------- HUD ---------- */
+.hud {
+  background-color: var(--panel);
+  border: 1px solid var(--carta-borde);
+  border-radius: 10px;
+}
+
+.stat-box {
+  background-color: var(--bg);
+  border: 1px solid var(--carta-borde);
+  border-radius: 8px;
+  padding: 8px 6px;
+}
+
+.stat-label {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--texto-tenue);
+}
+
+.stat-value {
+  font-family: "Press Start 2P", cursive;
+  font-size: 1.2rem;
+  color: var(--neon);
+  margin-top: 4px;
+}
+
+.mensaje-badge {
+  background-color: var(--violeta);
+  color: #fff;
+  font-size: 0.75rem;
+  padding: 8px 14px;
+  border-radius: 20px;
+}
+
+/* ---------- CARTAS ---------- */
+.carta {
+  background-color: var(--carta-bg);
+  border: 2px solid var(--carta-borde);
+  border-radius: 10px;
+  aspect-ratio: 1 / 1;
+  cursor: pointer;
+  transition: transform 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.carta:hover {
+  transform: translateY(-4px);
+  border-color: var(--neon);
+  box-shadow: 0 6px 16px rgba(57, 255, 136, 0.25);
+}
+
+.carta .card-body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.carta .card-body i {
+  font-size: 2rem;
+  color: var(--neon);
+}
+
+/* Carta reverso (dorso de la carta, para usar mas adelante con JS) */
+.carta-reverso {
+  background: repeating-linear-gradient(
+    45deg,
+    var(--carta-bg),
+    var(--carta-bg) 8px,
+    #2a3145 8px,
+    #2a3145 16px
+  );
+  border-color: var(--violeta);
+}
+
+.signo-interrogacion {
+  font-family: "Press Start 2P", cursive;
+  font-size: 2rem;
+  color: var(--violeta);
+}
+
+/* ---------- FOOTER ---------- */
+.footer-nota {
+  color: var(--texto-tenue);
+  font-size: 0.8rem;
+}
+
+/* =========================================================
+   RESPONSIVE DEL TABLERO
+   Celular:        2 cartas por fila  -> col-6
+   Tablet (md):    3 cartas por fila
+   Escritorio (lg):4 cartas por fila
+   Pantallas XL:   6 cartas por fila
+   ========================================================= */
+@media (min-width: 768px) {
+  #tablero .col-md-4 {
+    flex: 0 0 auto;
+    width: 33.3333%;
+  }
+}
+
+@media (min-width: 992px) {
+  #tablero .col-lg-3 {
+    flex: 0 0 auto;
+    width: 25%;
+  }
+}
+
+@media (min-width: 1200px) {
+  #tablero .col-xl-2 {
+    flex: 0 0 auto;
+    width: 16.6666%;
+  }
+}
