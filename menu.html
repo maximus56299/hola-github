@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portafolio — Max</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #0f0f0f;
+      color: #e0e0e0;
+      font-family: 'Courier New', monospace;
+      max-width: 700px;
+      margin: 0 auto;
+      padding: 60px 20px;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      color: #fff;
+      text-transform: uppercase;
+      letter-spacing: 4px;
+      border-left: 5px solid #c0392b;
+      padding-left: 16px;
+      margin-bottom: 12px;
+    }
+
+    .subtitulo {
+      color: #888;
+      font-size: 0.9rem;
+      padding-left: 21px;
+      margin-bottom: 60px;
+    }
+
+    .ejercicios {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .ejercicio {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      padding: 24px;
+      background-color: #111;
+      border: 1px solid #222;
+      border-radius: 4px;
+      text-decoration: none;
+      color: inherit;
+      transition: border-color 0.2s;
+    }
+
+    .ejercicio:hover {
+      border-color: #c0392b;
+    }
+
+    .num {
+      font-size: 2rem;
+      font-weight: bold;
+      color: #222;
+      min-width: 40px;
+    }
+
+    .ejercicio:hover .num {
+      color: #c0392b;
+    }
+
+    .info h2 {
+      font-size: 1rem;
+      color: #fff;
+      margin-bottom: 4px;
+      letter-spacing: 1px;
+    }
+
+    .info p {
+      font-size: 0.85rem;
+      color: #666;
+    }
+
+    footer {
+      margin-top: 80px;
+      color: #333;
+      font-size: 0.8rem;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Portafolio</h1>
+  <p class="subtitulo">Trabajos del curso de programación full stack — Max · 2026</p>
+
+  <div class="ejercicios">
+
+    <a class="ejercicio" href="/battlefield-1/index.html">
+      <span class="num">01</span>
+      <div class="info">
+        <h2>Perfil personal</h2>
+        <p>Página de presentación con información personal, gustos y tabla de eventos.</p>
+      </div>
+    </a>
+
+    <a class="ejercicio" href="/hotline-miami-2/recomendaciones.html">
+      <span class="num">02</span>
+      <div class="info">
+        <h2>Recomendaciones de juegos</h2>
+        <p>Página con recomendaciones, top 3, tabla comparativa y mapa.</p>
+      </div>
+    </a>
+
+    <a class="ejercicio" href="/gta-3/estructuras_coso_pimba.html">
+      <span class="num">03</span>
+      <div class="info">
+        <h2>Estructuras HTML</h2>
+        <p>Exploración de etiquetas y estructuras semánticas de HTML.</p>
+      </div>
+    </a>
+
+  </div>
+
+  <footer>
+    <p>Hecho por Max · 2026</p>
+  </footer>
+
+</body>
+</html>
