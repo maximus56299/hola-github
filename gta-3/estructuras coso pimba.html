@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Estructuras Web — Max</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: monospace; background: #0f0f0f; color: #e0e0e0; padding: 0; }
+
+    /* ── ÍNDICE ── */
+    .indice {
+      background: #111;
+      border-bottom: 2px solid #c0392b;
+      padding: 20px 24px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+    .indice span { color: #555; font-size: 0.8rem; margin-right: 8px; }
+    .indice a {
+      color: #c0392b;
+      text-decoration: none;
+      font-size: 0.8rem;
+      padding: 4px 10px;
+      border: 1px solid #c0392b;
+      border-radius: 2px;
+    }
+    .indice a:hover { background: #c0392b; color: #fff; }
+
+    /* ── NIVEL BLOQUES ── */
+    .nivel {
+      padding: 32px 24px;
+      border-bottom: 2px solid #222;
+    }
+    .nivel-titulo {
+      font-size: 1.2rem;
+      color: #fff;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      border-left: 5px solid #c0392b;
+      padding-left: 12px;
+      margin-bottom: 8px;
+    }
+    .nivel-sub {
+      color: #555;
+      font-size: 0.8rem;
+      margin-bottom: 24px;
+      padding-left: 17px;
+    }
+
+    .paginas {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .pagina {
+      flex: 1;
+      min-width: 240px;
+      background: #111;
+      border: 1px solid #222;
+      border-radius: 4px;
+      padding: 16px;
+    }
+    .pagina-titulo {
+      font-size: 0.75rem;
+      color: #c0392b;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 12px;
+      border-bottom: 1px solid #222;
+      padding-bottom: 8px;
+    }
+
+    /* ── BLOQUES SEMÁNTICOS ── */
+    .bloque {
+      border: 2px solid #c0392b;
+      border-radius: 3px;
+      padding: 8px 10px;
+      margin-bottom: 8px;
+      background: #0f0f0f;
+    }
+    .bloque.nav-b  { border-color: #1d9bf0; }
+    .bloque.main-b { border-color: #2ecc71; }
+    .bloque.sec-b  { border-color: #f39c12; background: #111; }
+    .bloque.art-b  { border-color: #f1c40f; background: #111; }
+    .bloque.aside-b{ border-color: #3498db; background: #111; }
+    .bloque.foot-b { border-color: #555; }
+    .bloque.div-b  { border-color: #2ecc71; border-style: dashed; background: #111; }
+    .bloque.span-b { border-color: #e67e22; border-style: dotted; background: #111; display: inline-block; padding: 2px 8px; margin: 2px; }
+
+    .bloque-label {
+      font-size: 0.65rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 4px;
+      color: #c0392b;
+    }
+    .bloque.nav-b  .bloque-label { color: #1d9bf0; }
+    .bloque.main-b .bloque-label { color: #2ecc71; }
+    .bloque.sec-b  .bloque-label { color: #f39c12; }
+    .bloque.art-b  .bloque-label { color: #f1c40f; }
+    .bloque.aside-b .bloque-label { color: #3498db; }
+    .bloque.foot-b .bloque-label { color: #555; }
+    .bloque.div-b  .bloque-label { color: #2ecc71; }
+    .bloque.span-b .bloque-label { color: #e67e22; }
+
+    .bloque p { font-size: 0.78rem; color: #888; }
+
+    .row-bloques { display: flex; gap: 8px; }
+    .row-bloques .bloque { flex: 1; }
+
+    /* ── COMPARACIÓN N3 ── */
+    .comparacion {
+      background: #111;
+      border: 1px solid #333;
+      border-radius: 4px;
+      padding: 16px;
+      margin-top: 20px;
+      font-size: 0.8rem;
+      color: #888;
+    }
+    .comparacion h3 { color: #c0392b; margin-bottom: 10px; font-size: 0.9rem; }
+    .comparacion ul { margin-left: 16px; line-height: 1.8; }
+    .comparacion li { margin-bottom: 4px; }
+    .coincidencia { color: #2ecc71; font-weight: bold; }
+
+    /* ── FORMULARIOS ── */
+    input[type="text"], textarea, select {
+      background: #1a1a1a;
+      border: 1px solid #333;
+      color: #e0e0e0;
+      padding: 6px 10px;
+      font-family: monospace;
+      font-size: 0.8rem;
+      border-radius: 2px;
+      width: 100%;
+      margin-top: 4px;
+    }
+    button {
+      margin-top: 6px;
+      background: #c0392b;
+      color: #fff;
+      border: none;
+      padding: 5px 12px;
+      font-family: monospace;
+      font-size: 0.8rem;
+      cursor: pointer;
+      border-radius: 2px;
+    }
+    ul.lista { margin-left: 16px; font-size: 0.78rem; color: #888; line-height: 1.8; }
+    img.thumb { width: 100%; max-width: 180px; height: 60px; background: #222; display: block; border-radius: 2px; margin: 6px 0; border: 1px solid #333; }
+  </style>
+</head>
+<body>
+
+<!-- ÍNDICE -->
+<div class="indice">
+  <span>Ir a →</span>
+  <a href="#n1">Nivel 1</a>
+  <a href="#n2">Nivel 2</a>
+  <a href="#n3">Nivel 3</a>
+</div>
+
+<!-- ══════════════════════════════════════════
+     NIVEL 1
+══════════════════════════════════════════ -->
+<div class="nivel" id="n1">
+  <div class="nivel-titulo">Nivel 1</div>
+  <div class="nivel-sub">3 páginas analizadas · Elementos: header, nav, main, section, footer</div>
+
+  <div class="paginas">
+
+    <!-- STEAM N1 -->
+    <div class="pagina">
+      <div class="pagina-titulo">🎮 Steam</div>
+      <div class="bloque">
+        <div class="bloque-label">Header</div>
+        <p>Logo + búsqueda + acceso a cuenta</p>
+      </div>
+      <div class="bloque nav-b">
+        <div class="bloque-label">Nav</div>
+        <p>Tienda | Comunidad | Acerca de | Soporte</p>
+      </div>
+      <div class="bloque main-b">
+        <div class="bloque-label">Main</div>
+        <div class="bloque sec-b">
+          <div class="bloque-label">Section — Ofertas</div>
+          <p>Carrusel con juegos en oferta</p>
+        </div>
+        <div class="bloque sec-b">
+          <div class="bloque-label">Section — Recomendados</div>
+          <p>Grilla de juegos sugeridos</p>
+        </div>
+        <div class="bloque sec-b">
+          <div class="bloque-label">Section — Categorías</div>
+          <p>Acción, RPG, Estrategia, Indie…</p>
+        </div>
+      </div>
+      <div class="bloque foot-b">
+        <div class="bloque-label">Footer</div>
+        <p>Valve Corporation · Privacidad · Legal</p>
+      </div>
+    </div>
+
+    <!-- TWITTER N1 -->
+    <div class="pagina">
+      <div class="pagina-titulo">🐦 Twitter / X</div>
+      <div class="bloque">
+        <div class="bloque-label">Header</div>
+        <p>Logo X + título de sección</p>
+      </div>
+      <div class="bloque nav-b">
+        <div class="bloque-label">Nav</div>
+        <p>Inicio | Explorar | Notificaciones | Mensajes | Perfil</p>
+      </div>
+      <div class="bloque main-b">
+        <div class="bloque-label">Main</div>
+        <div class="bloque sec-b">
+          <div class="bloque-label">Section — Para ti</div>
+          <p>Feed con tweets del algoritmo</p>
+        </div>
+        <div class="bloque sec-b">
+          <div class="bloque-label">Section — Siguiendo</div>
+          <p>Tweets de cuentas que seguís</p>
+        </div>
+        <div class="bloque sec-b">
+          <div class="bloque-label">Section — Tendencias</div>
+          <p>Hashtags y temas populares</p>
+        </div>
+      </div>
+      <div class="bloque foot-b">
+        <div class="bloque-label">Footer</div>
+        <p>Términos · Privacidad · © 2026 X Corp.</p>
+      </div>
+    </div>
+
+    <!-- YOUTUBE N1 -->
+    <div class="pagina">
+      <div class="pagina-titulo">▶️ YouTube</div>
+      <div class="bloque">
+        <div class="bloque-label">Header</div>
+        <p>Logo YouTube + búsqueda + cuenta</p>
+      </div>
+      <div class="bloque nav-b">
+        <div class="bloque-label">Nav</div>
+        <p>Inicio | Shorts | Suscripciones | Biblioteca</p>
+      </div>
+      <div class="bloque main-b">
+        <div class="bloque-label">Main</div>
+        <div class="bloque sec-b">
+          <div class="bloque-label">Section — Recomendados</div>
+          <p>Grilla de miniaturas con título y vistas</p>
+        </div>
+        <div class="bloque sec-b">
+          <div class="bloque-label">Section — Shorts</div>
+          <p>Videos cortos en formato vertical</p>
+        </div>
+        <div class="bloque sec-b">
+          <div class="bloque-label">Section — Suscripciones</div>
+          <p>Últimos videos de canales seguidos</p>
+        </div>
+      </div>
+      <div class="bloque foot-b">
+        <div class="bloque-label">Footer</div>
+        <p>Acerca de · Derechos de autor · © 2026 Google</p>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════
+     NIVEL 2
+══════════════════════════════════════════ -->
+<div class="nivel" id="n2">
+  <div class="nivel-titulo">Nivel 2</div>
+  <div class="nivel-sub">3 páginas analizadas · Agrega: article, aside, listas, formularios, imágenes/video</div>
+
+  <div class="paginas">
+
+    <!-- STEAM N2 -->
+    <div class="pagina">
+      <div class="pagina-titulo">🎮 Steam</div>
+      <div class="bloque">
+        <div class="bloque-label">Header</div>
+        <p>Logo + búsqueda + cuenta + carrito</p>
+        <img class="thumb" alt="[banner header Steam]">
+      </div>
+      <div class="bloque nav-b">
+        <div class="bloque-label">Nav</div>
+        <p>Tienda | Comunidad | Acerca de | Soporte | Instalar Steam</p>
+      </div>
+      <div class="bloque main-b">
+        <div class="bloque-label">Main</div>
+        <div class="bloque sec-b">
+          <div class="bloque-label">Section — Ofertas</div>
+          <div class="bloque art-b">
+            <div class="bloque-label">Article — Juego destacado</div>
+            <p>Sekiro: Shadows Die Twice — 40% OFF</p>
+            <img class="thumb" alt="[imagen banner Sekiro]">
+          </div>
+        </div>
+        <div class="row-bloques">
+          <div class="bloque sec-b">
+            <div class="bloque-label">Section — Grilla</div>
+            <ul class="lista">
+              <li>Crysis Remastered</li>
+              <li>Just Cause 3</li>
+              <li>Dark Souls III</li>
+            </ul>
+          </div>
+          <div class="bloque aside-b">
+            <div class="bloque-label">Aside — Sidebar</div>
+            <ul class="lista">
+              <li>Acción</li>
+              <li>RPG</li>
+              <li>Indie</li>
+            </ul>
+          </div>
+        </div>
+        <div class="bloque sec-b">
+          <div class="bloque-label">Section — Búsqueda</div>
+          <input type="text" placeholder="Buscar en la tienda...">
+          <button type="button">Buscar</button>
+        </div>
+      </div>
+      <div class="bloque foot-b">
+        <div class="bloque-label">Footer</div>
+        <p>Valve Corporation · Privacidad · © 2026</p>
+      </div>
+    </div>
+
+    <!-- TWITTER N2 -->
+    <div class="pagina">
+      <div class="pagina-titulo">🐦 Twitter / X</div>
+      <div class="bloque">
+        <div class="bloque-label">Header</div>
+        <p>Logo X</p>
+      </div>
+      <div class="bloque nav-b">
+        <div class="bloque-label">Nav</div>
+        <p>Inicio | Explorar | Notificaciones | Mensajes | Perfil | Más</p>
+      </div>
+      <div class="bloque main-b">
+        <div class="bloque-label">Main</div>
+        <div class="bloque sec-b">
+          <div class="bloque-label">Section — Publicar tweet</div>
+          <textarea rows="2" placeholder="¿Qué está pasando?"></textarea>
+          <button type="button">Publicar</button>
+        </div>
+        <div class="row-bloques">
+          <div class="bloque sec-b">
+            <div class="bloque-label">Section — Feed</div>
+            <div class="bloque art-b">
+              <div class="bloque-label">Article — Tweet</div>
+              <p>@usuario · 2h — Tweet con imagen</p>
+              <img class="thumb" alt="[imagen del tweet]">
+            </div>
+            <div class="bloque art-b">
+              <div class="bloque-label">Article — Tweet</div>
+              <p>@otro · 5h</p>
+              <ul class="lista"><li>@mencion1</li><li>@mencion2</li></ul>
+            </div>
+          </div>
+          <div class="bloque aside-b">
+            <div class="bloque-label">Aside — Sidebar</div>
+            <p style="font-size:0.75rem;color:#888;">Tendencias:</p>
+            <ul class="lista"><li>#Uruguay</li><li>#Gaming</li></ul>
+            <p style="font-size:0.75rem;color:#888;margin-top:6px;">A quién seguir:</p>
+            <ul class="lista"><li>@valve</li></ul>
+          </div>
+        </div>
+      </div>
+      <div class="bloque foot-b">
+        <div class="bloque-label">Footer</div>
+        <p>Términos · Privacidad · © 2026 X Corp.</p>
+      </div>
+    </div>
+
+    <!-- YOUTUBE N2 -->
+    <div class="pagina">
+      <div class="pagina-titulo">▶️ YouTube</div>
+      <div class="bloque">
+        <div class="bloque-label">Header</div>
+        <input type="text" placeholder="Buscar...">
+        <button type="button">🔍</button>
+      </div>
+      <div class="bloque nav-b">
+        <div class="bloque-label">Nav</div>
+        <p>Inicio | Shorts | Suscripciones | Biblioteca</p>
+      </div>
+      <div class="bloque main-b">
+        <div class="bloque-label">Main</div>
+        <div class="row-bloques">
+          <div class="bloque sec-b">
+            <div class="bloque-label">Section — Videos</div>
+            <div class="bloque art-b">
+              <div class="bloque-label">Article — Video principal</div>
+              <div style="background:#222;height:60px;width:100%;border-radius:2px;margin-bottom:4px;display:flex;align-items:center;justify-content:center;color:#555;font-size:0.7rem;">[ video ]</div>
+              <p>Título del video · 1.2M vistas</p>
+            </div>
+            <div class="bloque art-b">
+              <div class="bloque-label">Article — Recomendado</div>
+              <img class="thumb" alt="[miniatura video]">
+              <p>Otro video · Canal B</p>
+            </div>
+          </div>
+          <div class="bloque aside-b">
+            <div class="bloque-label">Aside — Sidebar</div>
+            <ul class="lista">
+              <li>Video 1 — Canal A</li>
+              <li>Video 2 — Canal B</li>
+              <li>Video 3 — Canal C</li>
+            </ul>
+          </div>
+        </div>
+        <div class="bloque sec-b">
+          <div class="bloque-label">Section — Comentarios</div>
+          <input type="text" placeholder="Agregá un comentario...">
+          <button type="button">Comentar</button>
+        </div>
+      </div>
+      <div class="bloque foot-b">
+        <div class="bloque-label">Footer</div>
+        <p>Acerca de · © 2026 Google LLC</p>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════
+     NIVEL 3
+══════════════════════════════════════════ -->
+<div class="nivel" id="n3">
+  <div class="nivel-titulo">Nivel 3</div>
+  <div class="nivel-sub">2 páginas analizadas · Agrega: div, span, comparación de estructuras</div>
+
+  <div class="paginas">
+
+    <!-- STEAM N3 -->
+    <div class="pagina">
+      <div class="pagina-titulo">🎮 Steam</div>
+      <div class="bloque">
+        <div class="bloque-label">Header</div>
+        <div class="bloque div-b">
+          <div class="bloque-label">div — layout interno del header</div>
+          <p>Agrupa logo, búsqueda y acciones en una fila</p>
+        </div>
+        <p>El ícono de Steam usa <span class="bloque span-b"><span class="bloque-label">span</span> logo</span> junto al texto</p>
+      </div>
+      <div class="bloque nav-b">
+        <div class="bloque-label">Nav</div>
+        <p>Tienda | Comunidad | Acerca de | Soporte</p>
+      </div>
+      <div class="bloque main-b">
+        <div class="bloque-label">Main</div>
+        <div class="bloque sec-b">
+          <div class="bloque-label">Section — Ofertas</div>
+          <div class="bloque art-b">
+            <div class="bloque-label">Article — Juego destacado</div>
+            <p>Badge de descuento: <span class="bloque span-b"><span class="bloque-label">span</span> -40%</span></p>
+          </div>
+        </div>
+        <div class="row-bloques">
+          <div class="bloque sec-b">
+            <div class="bloque-label">Section — Grilla</div>
+            <div class="bloque div-b">
+              <div class="bloque-label">div.card-grid — contenedor de tarjetas</div>
+              <p>Cada juego va en un div.card</p>
+            </div>
+          </div>
+          <div class="bloque aside-b">
+            <div class="bloque-label">Aside — Sidebar</div>
+            <ul class="lista"><li>Acción</li><li>RPG</li><li>Indie</li></ul>
+          </div>
+        </div>
+      </div>
+      <div class="bloque foot-b">
+        <div class="bloque-label">Footer</div>
+        <p>Valve Corporation · © 2026</p>
+      </div>
+    </div>
+
+    <!-- TWITTER N3 -->
+    <div class="pagina">
+      <div class="pagina-titulo">🐦 Twitter / X</div>
+      <div class="bloque">
+        <div class="bloque-label">Header</div>
+        <div class="bloque div-b">
+          <div class="bloque-label">div — wrapper del logo</div>
+          <p>Header mínimo, solo contiene el logo X centrado</p>
+        </div>
+      </div>
+      <div class="bloque nav-b">
+        <div class="bloque-label">Nav — columna lateral izquierda</div>
+        <p>Inicio | Explorar | Notificaciones | Mensajes | Perfil</p>
+        <p>Badge de notif: <span class="bloque span-b"><span class="bloque-label">span</span> 3</span></p>
+      </div>
+      <div class="bloque main-b">
+        <div class="bloque-label">Main</div>
+        <div class="bloque sec-b">
+          <div class="bloque-label">Section — Publicar</div>
+          <textarea rows="2" placeholder="¿Qué está pasando?"></textarea>
+          <button type="button">Publicar</button>
+        </div>
+        <div class="row-bloques">
+          <div class="bloque sec-b">
+            <div class="bloque-label">Section — Feed</div>
+            <div class="bloque div-b">
+              <div class="bloque-label">div — acciones del tweet</div>
+              <p>Like, RT, responder, compartir</p>
+            </div>
+            <div class="bloque art-b">
+              <div class="bloque-label">Article — Tweet</div>
+              <p><span class="bloque span-b"><span class="bloque-label">span</span> @usuario</span> <span class="bloque span-b"><span class="bloque-label">span</span> · 2h</span></p>
+              <img class="thumb" alt="[imagen tweet]">
+            </div>
+          </div>
+          <div class="bloque aside-b">
+            <div class="bloque-label">Aside — Sidebar derecha</div>
+            <input type="text" placeholder="Buscar en X" style="border-radius:20px;">
+            <ul class="lista" style="margin-top:6px;"><li>#Uruguay</li><li>#Gaming</li></ul>
+          </div>
+        </div>
+      </div>
+      <div class="bloque foot-b">
+        <div class="bloque-label">Footer</div>
+        <p>Términos · Privacidad · © 2026 X Corp.</p>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- COMPARACIÓN -->
+  <div class="comparacion">
+    <h3>📊 Comparación — Steam vs Twitter</h3>
+    <ul>
+      <li><strong style="color:#e0e0e0;">Similitudes:</strong>
+        <ul>
+          <li>Ambas usan header + nav + main + footer</li>
+          <li>Ambas tienen aside (sidebar) con contenido secundario</li>
+          <li>Ambas usan div para agrupar elementos de layout</li>
+          <li>Ambas usan span para destacar texto inline (badges, nombres)</li>
+        </ul>
+      </li>
+      <li style="margin-top:8px;"><strong style="color:#e0e0e0;">Diferencias:</strong>
+        <ul>
+          <li>Steam: nav horizontal arriba como barra</li>
+          <li>Twitter: nav vertical a la izquierda como columna</li>
+          <li>Steam: contenido en grillas de tarjetas (div.card)</li>
+          <li>Twitter: contenido en lista vertical de artículos (tweets)</li>
+          <li>Steam: búsqueda en el header</li>
+          <li>Twitter: formulario de publicación dentro del main</li>
+        </ul>
+      </li>
+      <li style="margin-top:10px;"><span class="coincidencia">Steam — coincidencia estimada con estructura real: ~75%</span></li>
+      <li><span class="coincidencia">Twitter — coincidencia estimada con estructura real: ~80%</span></li>
+    </ul>
+  </div>
+
+</div>
+
+</body>
+</html>
