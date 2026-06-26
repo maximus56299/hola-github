@@ -310,7 +310,6 @@ h1, h2, h3 {
   letter-spacing: 0.3px;
 }
 
-/* ---- Medidor de dificultad (firma visual) ---- */
 .medidor {
   display: flex;
   gap: 4px;
