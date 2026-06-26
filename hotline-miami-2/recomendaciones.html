@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Recomendaciones de Juegos — Max</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #0f0f0f;
+      color: #e0e0e0;
+      font-family: 'Courier New', monospace;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 20px 60px;
+    }
+
+    /* ── HEADER ── */
+    header {
+      padding: 48px 0 32px;
+      border-bottom: 2px solid #c0392b;
+      margin-bottom: 32px;
+    }
+
+    header h1 {
+      font-size: 2.4rem;
+      color: #fff;
+      text-transform: uppercase;
+      letter-spacing: 4px;
+      border-left: 5px solid #c0392b;
+      padding-left: 16px;
+      margin-bottom: 10px;
+    }
+
+    header p {
+      color: #888;
+      font-size: 0.95rem;
+      padding-left: 21px;
+    }
+
+    /* ── NAV ── */
+    nav {
+      background-color: #1a1a1a;
+      padding: 12px 20px;
+      border-radius: 4px;
+      margin-bottom: 40px;
+      display: flex;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      color: #c0392b;
+      text-decoration: none;
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    /* ── MAIN ── */
+    main {
+      display: flex;
+      flex-direction: column;
+      gap: 48px;
+    }
+
+    section {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    h2 {
+      color: #c0392b;
+      font-size: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      border-bottom: 1px solid #222;
+      padding-bottom: 8px;
+    }
+
+    h3 {
+      color: #fff;
+      font-size: 1.1rem;
+      margin-bottom: 4px;
+    }
+
+    p {
+      color: #ccc;
+      line-height: 1.8;
+    }
+
+    ul {
+      margin-left: 24px;
+      color: #ccc;
+    }
+
+    ul li {
+      margin-bottom: 8px;
+    }
+
+    img {
+      width: 100%;
+      max-width: 500px;
+      border-radius: 4px;
+      display: block;
+    }
+
+    a {
+      color: #c0392b;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    /* ── ARTICLE (destacado) ── */
+    article {
+      background-color: #111;
+      border: 1px solid #c0392b;
+      border-radius: 4px;
+      padding: 24px;
+    }
+
+    article h3 {
+      font-size: 1.4rem;
+      margin-bottom: 12px;
+    }
+
+    /* ── TOP 3 ── */
+    .top3 {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .top-item {
+      display: flex;
+      align-items: baseline;
+      gap: 16px;
+      padding: 16px;
+      background-color: #111;
+      border-radius: 4px;
+      border-left: 4px solid #333;
+    }
+
+    .top-item.gold { border-left-color: #f1c40f; }
+    .top-item.silver { border-left-color: #aaa; }
+    .top-item.bronze { border-left-color: #cd7f32; }
+
+    .top-num {
+      font-size: 2rem;
+      font-weight: bold;
+      color: #333;
+      min-width: 40px;
+    }
+
+    .top-item.gold .top-num { color: #f1c40f; }
+    .top-item.silver .top-num { color: #aaa; }
+    .top-item.bronze .top-num { color: #cd7f32; }
+
+    .top-info h3 { margin-bottom: 4px; }
+
+    /* ── TABLA ── */
+    table {
+      border-collapse: collapse;
+      width: 100%;
+    }
+
+    th, td {
+      border: 1px solid #333;
+      padding: 10px 14px;
+      text-align: left;
+    }
+
+    th {
+      background-color: #1a1a1a;
+      color: #c0392b;
+      text-transform: uppercase;
+      font-size: 0.8rem;
+      letter-spacing: 1px;
+    }
+
+    td { background-color: #111; }
+
+    /* ── IFRAME MAP ── */
+    iframe {
+      width: 100%;
+      height: 300px;
+      border: 1px solid #333;
+      border-radius: 4px;
+      display: block;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      margin-top: 60px;
+      padding-top: 24px;
+      border-top: 1px solid #222;
+      color: #555;
+      font-size: 0.85rem;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER con título y subtítulo -->
+  <header id="inicio">
+    <h1>Juegos que no podés perderte</h1>
+    <p>Recomendaciones personales de Max — jugados, sufridos y disfrutados</p>
+  </header>
+
+  <!-- NAV — menú de navegación con anclas a secciones de la página -->
+  <nav>
+    <a href="#inicio">Inicio</a>
+    <a href="#recomendaciones">Recomendaciones</a>
+    <a href="#top3">Top 3</a>
+    <a href="#pie">Pie de página</a>
+  </nav>
+
+  <main>
+
+    <!-- NIVEL 1 — intro + lista + imagen + enlace -->
+    <section id="recomendaciones">
+      <h2>Mis recomendaciones</h2>
+      <p>
+        Estos son tres juegos que recomiendo sin dudar. Cada uno tiene algo único que lo hace especial,
+        ya sea el desafío, la libertad o la escala de destrucción. Si todavía no los jugaste, deberías.
+      </p>
+
+      <ul>
+        <li>🗡️ <strong>Sekiro: Shadows Die Twice</strong> — acción y espadas en el Japón feudal</li>
+        <li>🔫 <strong>Crysis</strong> — shooter con gráficos que destruían computadoras en 2007</li>
+        <li>💥 <strong>Just Cause 3</strong> — mundo abierto con explosiones y un gancho infinito</li>
+      </ul>
+
+      <img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/814380/header.jpg" alt="Sekiro: Shadows Die Twice">
+
+      <p>
+        Podés ver más juegos similares en <a href="https://store.steampowered.com" target="_blank">Steam</a>.
+      </p>
+    </section>
+
+    <!-- NIVEL 2 — sección 1 con article destacado -->
+    <section>
+      <h2>El mejor de todos</h2>
+      <p>De todos los juegos que probé, hay uno que no se parece a ningún otro.</p>
+
+      <!-- ARTICLE — recomendación destacada -->
+      <article>
+        <h3>⭐ Sekiro: Shadows Die Twice</h3>
+        <p>
+          Sekiro es el juego más difícil y satisfactorio que jugué en mi vida.
+          No hay builds ni niveles: el único que mejora sos vos. Cada pelea es un duelo de reflejos
+          donde el timing lo es todo. Cuando finalmente derrotás a un jefe que te hizo morir 50 veces,
+          la sensación es imposible de describir.
+        </p>
+      </article>
+    </section>
+
+    <!-- NIVEL 2 — sección 2: juegos que querés probar -->
+    <section>
+      <h2>En la lista de pendientes</h2>
+      <p>Estos son juegos que tengo en el radar y que todavía no pude jugar pero quiero probar.</p>
+      <ul>
+        <li>🐉 Elden Ring — del mismo creador que Sekiro</li>
+        <li>🌍 GTA VI — cuando salga y si mi PC aguanta</li>
+        <li>🤖 Cyberpunk 2077 — dicen que ahora sí funciona bien</li>
+      </ul>
+    </section>
+
+    <!-- NIVEL 3 — TOP 3 con tamaños diferenciados -->
+    <section id="top3">
+      <h2>Top 3 personal</h2>
+      <p>Mi ranking definitivo, sin discusión posible.</p>
+
+      <div class="top3">
+        <div class="top-item gold">
+          <span class="top-num">1</span>
+          <div class="top-info">
+            <h3>Sekiro: Shadows Die Twice</h3>
+            <p>El pico máximo de los juegos de acción. Difícil, justo y adictivo.</p>
+          </div>
+        </div>
+        <div class="top-item silver">
+          <span class="top-num">2</span>
+          <div class="top-info">
+            <h3>Crysis</h3>
+            <p>Adelantado a su época. Todavía preguntás si tu PC puede con él.</p>
+          </div>
+        </div>
+        <div class="top-item bronze">
+          <span class="top-num">3</span>
+          <div class="top-info">
+            <h3>Just Cause 3</h3>
+            <p>Libertad total. El gancho convierte cualquier cosa en un playground.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- NIVEL 3 — Tabla comparativa -->
+    <section>
+      <h2>Comparativa</h2>
+      <table>
+        <tr>
+          <th>Juego</th>
+          <th>Género</th>
+          <th>Dificultad</th>
+          <th>Modo</th>
+        </tr>
+        <tr>
+          <td>Sekiro</td>
+          <td>Acción / RPG</td>
+          <td>🔴 Muy alta</td>
+          <td>Un jugador</td>
+        </tr>
+        <tr>
+          <td>Crysis</td>
+          <td>Shooter</td>
+          <td>🟡 Media</td>
+          <td>Un jugador</td>
+        </tr>
+        <tr>
+          <td>Just Cause 3</td>
+          <td>Mundo abierto</td>
+          <td>🟢 Baja</td>
+          <td>Un jugador</td>
+        </tr>
+      </table>
+    </section>
+
+    <!-- NIVEL 3 — Elementos estructurales nuevos -->
+
+    <!-- <figure> y <figcaption>: imagen con descripción asociada -->
+    <figure style="margin:0;">
+      <img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/225540/header.jpg" alt="Just Cause 3">
+      <!-- <figcaption> es la etiqueta para el pie de una imagen o figura -->
+      <figcaption style="color:#555; font-size:0.8rem; margin-top:6px;">Just Cause 3 — explosiones garantizadas</figcaption>
+    </figure>
+
+    <!-- <aside>: contenido secundario relacionado pero no esencial -->
+    <aside style="background:#111; border:1px solid #222; border-radius:4px; padding:20px;">
+      <h2 style="margin-bottom:12px;">¿Sabías que...?</h2>
+      <p>Crysis fue lanzado en 2007 y durante años fue el benchmark estándar para testear computadoras nuevas. La frase "¿pero puede correr Crysis?" se volvió un meme histórico en la comunidad gamer.</p>
+    </aside>
+
+  </main>
+
+  <!-- FOOTER con nombre, año y mapa -->
+  <footer id="pie">
+    <p>Hecho por Max · 2026</p>
+    <p style="margin: 12px 0 16px;">📍 Ubicación</p>
+    <!-- <iframe> incrusta contenido externo, en este caso un mapa de Google Maps -->
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3344.0!2d-56.7139!3d-34.3316!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95a1b8b0b0b0b0b1%3A0x1!2sSan+Jos%C3%A9+de+Mayo%2C+Uruguay!5e0!3m2!1ses!2suy!4v1234567890"
+      allowfullscreen=""
+      loading="lazy"
+      title="Ubicación en Google Maps">
+    </iframe>
+  </footer>
+
+</body>
+</html>
