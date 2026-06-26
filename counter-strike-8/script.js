@@ -1,6 +1,3 @@
-// ============ TEMA OSCURO / CLARO ============
-// El tema vive solo en memoria durante la sesión (no se usa localStorage:
-// no está soportado en algunos entornos, como los artifacts de Claude).
 const botonTema = document.getElementById("theme-toggle");
 const iconoTema = document.getElementById("theme-icon");
 
@@ -15,7 +12,6 @@ botonTema.addEventListener("click", () => {
   }
 });
 
-// ============ BUSCADOR + FILTROS ============
 const buscador = document.getElementById("buscador");
 const fichas = Array.from(document.querySelectorAll(".ficha"));
 const contadorResultados = document.getElementById("contador-resultados");
@@ -24,7 +20,6 @@ const sinResultados = document.getElementById("sin-resultados");
 let filtroDificultad = "todas";
 let filtroTiempo = "todas";
 
-// Botones de filtro de dificultad
 document.querySelectorAll("[data-filtro-dif]").forEach((boton) => {
   boton.addEventListener("click", () => {
     document.querySelectorAll("[data-filtro-dif]").forEach((b) => b.classList.remove("activo"));
@@ -34,7 +29,6 @@ document.querySelectorAll("[data-filtro-dif]").forEach((boton) => {
   });
 });
 
-// Botones de filtro de tiempo
 document.querySelectorAll("[data-filtro-tiempo]").forEach((boton) => {
   boton.addEventListener("click", () => {
     document.querySelectorAll("[data-filtro-tiempo]").forEach((b) => b.classList.remove("activo"));
