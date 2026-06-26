@@ -1,0 +1,289 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #ffffff;
+  color: #222;
+}
+
+/* ---------- ENCABEZADO ---------- */
+.entrega-header {
+  border: 1px solid #ccc;
+  padding: 15px 20px;
+  max-width: 900px;
+  margin: 10px auto 0 auto;
+}
+
+.entrega-header h1 {
+  font-size: 18px;
+  margin-bottom: 8px;
+}
+
+.archivo {
+  font-family: "Courier New", monospace;
+  font-size: 14px;
+  margin: 4px 0;
+}
+
+.archivo.verde {
+  color: #2e8b57;
+}
+
+.archivo.dorado {
+  color: #b8860b;
+}
+
+.aviso {
+  color: #1565c0;
+  font-size: 13px;
+  margin-top: 10px;
+}
+
+/* ---------- CONTENEDOR PRINCIPAL ---------- */
+.contenedor {
+  display: flex;
+  align-items: stretch;
+  max-width: 900px;
+  margin: 0 auto;
+  border-left: 1px solid #ccc;
+  border-right: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+}
+
+.nivel {
+  flex: 1;
+  min-width: 0;
+  padding-bottom: 20px;
+}
+
+.nivel:not(:last-child) {
+  border-right: 1px solid #ccc;
+}
+
+/* ---------- TITULOS DE NIVEL ---------- */
+.titulo-nivel {
+  text-align: center;
+  font-weight: bold;
+  color: #fff;
+  padding: 8px 0;
+  font-size: 15px;
+}
+
+.nivel1 {
+  background-color: #00e000;
+}
+
+.nivel2 {
+  background-color: #f5a623;
+}
+
+.nivel3 {
+  background-color: #e60000;
+}
+
+/* ---------- "QUE HACER" ---------- */
+.que-hacer {
+  font-size: 14px;
+  font-weight: bold;
+  padding: 10px 12px;
+  color: #1565c0;
+}
+
+.ademas {
+  font-size: 13px;
+  color: #1565c0;
+  padding: 0 12px;
+  margin-top: 16px;
+}
+
+.consigna-extra {
+  font-size: 13px;
+  font-weight: bold;
+  padding: 4px 12px 0 12px;
+  color: #111;
+}
+
+/* ---------- NIVEL 1: BOTONES ---------- */
+.botones {
+  display: flex;
+  gap: 14px;
+  padding: 24px 12px 10px 12px;
+}
+
+.boton {
+  border: none;
+  border-radius: 4px;
+  padding: 8px 16px;
+  font-size: 13px;
+  cursor: pointer;
+  color: #fff;
+  transition: filter 0.2s ease, transform 0.1s ease;
+}
+
+.boton.aceptar {
+  background-color: #4caf50;
+}
+
+.boton.cancelar {
+  background-color: #e0b34d;
+}
+
+.boton.eliminar {
+  background-color: #c0392b;
+}
+
+.boton:hover {
+  filter: brightness(1.15);
+  transform: translateY(-1px);
+}
+
+/* ---------- NIVEL 2: PRODUCTOS ---------- */
+.productos {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  position: relative;
+  background-color: #f4f6fb;
+  margin: 12px;
+  padding: 30px 10px;
+  border-radius: 4px;
+}
+
+.producto {
+  width: 90px;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  text-decoration: none;
+  color: #1a3a5c;
+}
+
+.producto.celeste {
+  background-color: #7fb8e8;
+  margin: 0 -10px;
+  z-index: 1;
+  transition: filter 0.2s ease, transform 0.15s ease;
+}
+
+.producto.celeste:hover {
+  filter: brightness(1.08);
+  transform: translateY(-2px);
+}
+
+.producto.destacado {
+  width: 95px;
+  height: 90px;
+  background-color: #f08080;
+  color: #fff;
+  position: relative;
+  z-index: 2;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.producto.destacado .sale {
+  position: absolute;
+  left: -6px;
+  top: 50%;
+  transform: translateY(-50%) rotate(-90deg);
+  background-color: #c0392b;
+  font-size: 9px;
+  padding: 1px 6px;
+}
+
+.producto.destacado .texto-destacado {
+  font-size: 13px;
+}
+
+/* ---------- NIVEL 3 ---------- */
+.nivel3-wrap {
+  display: flex;
+  flex-direction: column;
+}
+
+.caja-nivel3 {
+  margin: 12px;
+  border: 1px solid #999;
+  border-radius: 2px;
+  flex: 1;
+  min-height: 260px;
+  overflow: hidden;
+}
+
+.scroll-area {
+  height: 260px;
+  overflow-y: auto;
+  position: relative;
+}
+
+.navegacion {
+  position: sticky;
+  top: 0;
+  z-index: 3;
+  background-color: #2b2f36;
+  color: #fff;
+  padding: 10px 12px;
+  font-size: 13px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.campana {
+  font-size: 13px;
+}
+
+.categorias-limite {
+  height: 140px;
+  position: relative;
+}
+
+.categorias-wrap {
+  position: sticky;
+  top: 36px;
+  z-index: 1;
+  background-color: #ffffff;
+}
+
+.categorias {
+  background-color: #5b9bd5;
+  color: #fff;
+  padding: 8px 12px;
+  font-size: 13px;
+}
+
+.linea-roja {
+  border-top: 2px dashed #e60000;
+  position: relative;
+}
+
+.contenido-largo {
+  padding: 14px 12px 14px 12px;
+  background-color: #fff;
+  position: relative;
+  z-index: 2;
+}
+
+.contenido-largo p {
+  font-size: 13px;
+  color: #555;
+  margin-bottom: 18px;
+}
+
+.explicacion-nivel3 {
+  font-size: 12px;
+  color: #1565c0;
+  padding: 12px;
+  line-height: 1.5;
+}
+
+.explicacion-nivel3 strong {
+  color: #111;
+}
