@@ -1,0 +1,243 @@
+/* ── RESET Y BASE ── */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #0f0f0f;
+  color: #e0e0e0;
+  font-family: 'Courier New', monospace;
+  line-height: 1.7;
+}
+
+/* ── HEADER ── */
+header {
+  background-color: #111;
+  border-bottom: 3px solid #c0392b;
+  padding: 64px 20px;
+  text-align: center;
+}
+
+.header-inner {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.header-label {
+  /* letter-spacing: espacia las letras entre sí */
+  letter-spacing: 6px;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  color: #c0392b;
+  margin-bottom: 16px;
+}
+
+header h1 {
+  font-size: 3rem;
+  color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  margin-bottom: 12px;
+}
+
+.header-sub {
+  color: #666;
+  font-size: 0.95rem;
+}
+
+/* ── NAV ── */
+nav {
+  background-color: #1a1a1a;
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+  padding: 14px 20px;
+  /* position: sticky hace que el nav se quede fijo al hacer scroll */
+  position: sticky;
+  top: 0;
+  /* z-index controla qué elemento queda encima de otro */
+  z-index: 100;
+  border-bottom: 1px solid #222;
+}
+
+nav a {
+  color: #888;
+  text-decoration: none;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  /* transition anima el cambio de estilo al hacer hover */
+  transition: color 0.2s;
+}
+
+nav a:hover {
+  color: #c0392b;
+}
+
+/* ── MAIN ── */
+main {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 60px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+}
+
+/* ── SECCIONES BASE ── */
+.seccion {
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.seccion-inner {
+  padding: 40px;
+  position: relative;
+}
+
+.seccion-numero {
+  /* opacity controla la transparencia de un elemento */
+  opacity: 0.08;
+  font-size: 6rem;
+  font-weight: bold;
+  position: absolute;
+  top: 20px;
+  right: 24px;
+  line-height: 1;
+  /* user-select evita que el número se seleccione al hacer clic */
+  user-select: none;
+  color: #fff;
+}
+
+.seccion h2 {
+  font-size: 1.4rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 16px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.seccion p {
+  margin-bottom: 20px;
+  font-size: 0.95rem;
+}
+
+.seccion ul {
+  margin-left: 20px;
+}
+
+.seccion ul li {
+  margin-bottom: 8px;
+  font-size: 0.95rem;
+}
+
+/* ── SECCIÓN ASADO ── */
+.seccion-asado {
+  background-color: #1a1100;
+  border-left: 4px solid #e67e22;
+}
+
+.seccion-asado h2 {
+  color: #e67e22;
+}
+
+/* ── SECCIÓN PLAYA ── */
+.seccion-playa {
+  background-color: #001a1a;
+  border-left: 4px solid #1abc9c;
+}
+
+.seccion-playa h2 {
+  color: #1abc9c;
+}
+
+/* ── SECCIÓN JUEGOS ── */
+.seccion-juegos {
+  background-color: #0f001a;
+  border-left: 4px solid #9b59b6;
+}
+
+.seccion-juegos h2 {
+  color: #9b59b6;
+}
+
+/* ── GRID DE JUEGOS ── */
+.juegos-grid {
+  display: grid;
+  /* grid-template-columns divide el espacio en columnas iguales */
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-top: 24px;
+}
+
+.juego-card {
+  background-color: #111;
+  border: 1px solid #2a2a2a;
+  border-radius: 6px;
+  padding: 20px;
+  /* transform permite mover, rotar o escalar un elemento */
+  transition: transform 0.2s, border-color 0.2s;
+}
+
+.juego-card:hover {
+  transform: translateY(-4px);
+  border-color: #9b59b6;
+}
+
+.juego-card.destacado {
+  border-color: #9b59b6;
+  background-color: #1a0f2a;
+}
+
+.juego-plataforma {
+  display: inline-block;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #9b59b6;
+  margin-bottom: 8px;
+}
+
+.juego-card h3 {
+  color: #fff;
+  font-size: 1rem;
+  margin-bottom: 6px;
+}
+
+.juego-card p {
+  color: #666;
+  font-size: 0.8rem;
+  margin: 0;
+}
+
+/* ── FOOTER ── */
+footer {
+  text-align: center;
+  padding: 32px 20px;
+  border-top: 1px solid #1a1a1a;
+  color: #333;
+  font-size: 0.8rem;
+}
+
+/* ── RESPONSIVE ── */
+/* @media aplica estilos solo si la pantalla cumple una condición de tamaño */
+@media (max-width: 600px) {
+  header h1 {
+    font-size: 2rem;
+  }
+
+  .juegos-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .seccion-inner {
+    padding: 24px;
+  }
+
+  nav {
+    gap: 16px;
+  }
+}
