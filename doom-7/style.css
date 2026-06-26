@@ -16,7 +16,6 @@ body {
   min-height: 100vh;
 }
 
-/* ---------- TITULO ---------- */
 .titulo-juego {
   font-family: "Press Start 2P", cursive;
   font-size: 1.6rem;
@@ -35,7 +34,6 @@ body {
   margin-top: 8px;
 }
 
-/* ---------- HUD ---------- */
 .hud {
   background-color: var(--panel);
   border: 1px solid var(--carta-borde);
@@ -71,7 +69,6 @@ body {
   border-radius: 20px;
 }
 
-/* ---------- CARTAS ---------- */
 .carta {
   background-color: var(--carta-bg);
   border: 2px solid var(--carta-borde);
@@ -99,7 +96,6 @@ body {
   color: var(--neon);
 }
 
-/* Carta reverso (dorso de la carta, para usar mas adelante con JS) */
 .carta-reverso {
   background: repeating-linear-gradient(
     45deg,
@@ -117,19 +113,12 @@ body {
   color: var(--violeta);
 }
 
-/* ---------- FOOTER ---------- */
 .footer-nota {
   color: var(--texto-tenue);
   font-size: 0.8rem;
 }
 
-/* =========================================================
-   RESPONSIVE DEL TABLERO
-   Celular:        2 cartas por fila  -> col-6
-   Tablet (md):    3 cartas por fila
-   Escritorio (lg):4 cartas por fila
-   Pantallas XL:   6 cartas por fila
-   ========================================================= */
+
 @media (min-width: 768px) {
   #tablero .col-md-4 {
     flex: 0 0 auto;
