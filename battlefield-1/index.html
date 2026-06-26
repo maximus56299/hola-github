@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <!-- La etiqueta <meta charset> define la codificación de caracteres para mostrar tildes y ñ -->
+  <meta charset="UTF-8">
+  <!-- La etiqueta <meta name="viewport"> hace que la página se vea bien en celulares -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Max</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #0f0f0f;
+      color: #e0e0e0;
+      font-family: 'Courier New', monospace;
+      padding: 40px 20px;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    h1 {
+      font-size: 3rem;
+      color: #ffffff;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      border-left: 5px solid #c0392b;
+      padding-left: 16px;
+      margin-bottom: 32px;
+    }
+
+    p {
+      line-height: 1.8;
+      margin-bottom: 20px;
+      color: #cccccc;
+    }
+
+    hr {
+      border: none;
+      border-top: 1px solid #333;
+      margin: 32px 0;
+    }
+
+    ul {
+      margin: 16px 0 24px 24px;
+      color: #cccccc;
+    }
+
+    ul li {
+      margin-bottom: 8px;
+    }
+
+    img {
+      width: 100%;
+      max-width: 400px;
+      border-radius: 4px;
+      margin: 20px 0;
+      display: block;
+    }
+
+    a {
+      color: #c0392b;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      max-width: 400px;
+      margin: 20px 0;
+    }
+
+    th, td {
+      border: 1px solid #333;
+      padding: 10px 16px;
+      text-align: left;
+    }
+
+    th {
+      background-color: #1a1a1a;
+      color: #c0392b;
+      text-transform: uppercase;
+      font-size: 0.85rem;
+      letter-spacing: 1px;
+    }
+
+    td {
+      background-color: #111;
+    }
+
+    textarea {
+      width: 100%;
+      max-width: 400px;
+      background-color: #111;
+      color: #e0e0e0;
+      border: 1px solid #333;
+      border-radius: 4px;
+      padding: 10px;
+      font-family: 'Courier New', monospace;
+      font-size: 0.95rem;
+      resize: vertical;
+      display: block;
+      margin: 12px 0;
+    }
+
+    select {
+      background-color: #111;
+      color: #e0e0e0;
+      border: 1px solid #333;
+      border-radius: 4px;
+      padding: 8px 12px;
+      font-family: 'Courier New', monospace;
+      font-size: 0.95rem;
+      margin: 12px 0;
+      display: block;
+    }
+
+    label {
+      color: #888;
+      font-size: 0.85rem;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    /* La etiqueta <details> permite mostrar/ocultar contenido al hacer clic -->*/
+    details {
+      border: 1px solid #333;
+      border-radius: 4px;
+      padding: 12px 16px;
+      margin: 20px 0;
+      background-color: #111;
+    }
+
+    summary {
+      cursor: pointer;
+      color: #c0392b;
+      font-weight: bold;
+      letter-spacing: 1px;
+    }
+
+    /* La etiqueta <mark> resalta texto -->*/
+    mark {
+      background-color: #c0392b;
+      color: #fff;
+      padding: 2px 6px;
+      border-radius: 2px;
+    }
+
+    /* La etiqueta <blockquote> se usa para citas -->*/
+    blockquote {
+      border-left: 4px solid #c0392b;
+      padding-left: 16px;
+      color: #888;
+      font-style: italic;
+      margin: 20px 0;
+    }
+
+    /* La etiqueta <abbr> muestra una abreviatura con su significado al pasar el mouse -->*/
+    abbr {
+      border-bottom: 1px dotted #888;
+      cursor: help;
+    }
+
+    footer {
+      margin-top: 48px;
+      color: #444;
+      font-size: 0.8rem;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NIVEL 1 -->
+
+  <h1>Max</h1>
+
+  <p>
+    Hola, soy Max.<br>
+    Estudiante de programación full stack, aprendiendo a construir cosas desde cero.
+  </p>
+
+  <p>
+    Me gustan los videojuegos, la pizza y andar en bici.
+    Quiero aprender a programar para poder crear mis propios proyectos.
+  </p>
+
+  <hr>
+
+  <p>
+    Mi juego favorito es <mark>Sekiro: Shadows Die Twice</mark> y mi serie favorita es Wakfu.
+  </p>
+
+  <img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/814380/header.jpg" alt="Sekiro: Shadows Die Twice">
+
+  <!-- NIVEL 2 -->
+
+  <h2 style="color:#c0392b; margin: 32px 0 16px; letter-spacing:2px; font-size:1rem; text-transform:uppercase;">Cosas que me gustan</h2>
+
+  <ul>
+    <li>🎮 Videojuegos</li>
+    <li>🍕 Pizza</li>
+    <li>🚲 Andar en bici</li>
+  </ul>
+
+  <!-- La etiqueta <img> muestra una imagen -->
+  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Sekiro_key_art.jpg/800px-Sekiro_key_art.jpg" alt="Sekiro: Shadows Die Twice">
+
+  <p>
+    ¿Querés ver algo copado? Entrá a este <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank">enlace</a>.
+  </p>
+
+  <table>
+    <tr>
+      <th>Año</th>
+      <th>Algo que pasó</th>
+    </tr>
+    <tr>
+      <td>2024</td>
+      <td>Empecé a programar</td>
+    </tr>
+    <tr>
+      <td>2026</td>
+      <td>Aprendí HTML</td>
+    </tr>
+  </table>
+
+  <label for="comentario">Dejá un comentario:</label>
+  <textarea id="comentario" rows="4" placeholder="Escribí algo..."></textarea>
+
+  <label for="lenguaje">¿Qué lenguaje te gusta más?</label>
+  <select id="lenguaje">
+    <option>HTML</option>
+    <option>CSS</option>
+    <option>JavaScript</option>
+  </select>
+
+  <!-- NIVEL 3 — etiquetas nuevas con comentarios explicativos -->
+
+  <!-- La etiqueta <details> y <summary> crean un bloque expandible al hacer clic -->
+  <details>
+    <summary>▶ Dato extra sobre mí</summary>
+    <p style="margin-top: 12px;">
+      Cuando no estoy programando, estoy intentando terminar Sekiro por décima vez.
+    </p>
+  </details>
+
+  <!-- La etiqueta <blockquote> se usa para mostrar una cita o frase destacada -->
+  <blockquote>
+    "La práctica hace al maestro." — alguien que sabía lo que decía
+  </blockquote>
+
+  <!-- La etiqueta <abbr> muestra el significado completo de una abreviatura al pasar el mouse -->
+  <p>
+    Estoy aprendiendo <abbr title="HyperText Markup Language">HTML</abbr> en la UTU.
+  </p>
+
+  <!-- La etiqueta <strong> indica texto muy importante (se muestra en negrita) -->
+  <!-- La etiqueta <em> indica énfasis (se muestra en cursiva) -->
+  <p>
+    Lo más importante es <strong>no rendirse</strong>, aunque el juego sea <em>imposiblemente difícil</em>.
+  </p>
+
+  <!-- La etiqueta <footer> define el pie de página del sitio -->
+  <footer>
+    <p>Hecho por Max · 2026</p>
+  </footer>
+
+</body>
+</html>
