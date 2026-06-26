@@ -20,7 +20,6 @@
       padding: 0 20px 60px;
     }
 
-    /* ── HEADER ── */
     header {
       padding: 48px 0 32px;
       border-bottom: 2px solid #c0392b;
@@ -43,7 +42,6 @@
       padding-left: 21px;
     }
 
-    /* ── NAV ── */
     nav {
       background-color: #1a1a1a;
       padding: 12px 20px;
@@ -66,7 +64,6 @@
       text-decoration: underline;
     }
 
-    /* ── MAIN ── */
     main {
       display: flex;
       flex-direction: column;
@@ -124,7 +121,6 @@
       text-decoration: underline;
     }
 
-    /* ── ARTICLE (destacado) ── */
     article {
       background-color: #111;
       border: 1px solid #c0392b;
@@ -137,7 +133,6 @@
       margin-bottom: 12px;
     }
 
-    /* ── TOP 3 ── */
     .top3 {
       display: flex;
       flex-direction: column;
@@ -171,7 +166,6 @@
 
     .top-info h3 { margin-bottom: 4px; }
 
-    /* ── TABLA ── */
     table {
       border-collapse: collapse;
       width: 100%;
@@ -193,7 +187,6 @@
 
     td { background-color: #111; }
 
-    /* ── IFRAME MAP ── */
     iframe {
       width: 100%;
       height: 300px;
@@ -202,7 +195,6 @@
       display: block;
     }
 
-    /* ── FOOTER ── */
     footer {
       margin-top: 60px;
       padding-top: 24px;
@@ -215,13 +207,11 @@
 </head>
 <body>
 
-  <!-- HEADER con título y subtítulo -->
   <header id="inicio">
     <h1>Juegos que no podés perderte</h1>
     <p>Recomendaciones personales de Max — jugados, sufridos y disfrutados</p>
   </header>
 
-  <!-- NAV — menú de navegación con anclas a secciones de la página -->
   <nav>
     <a href="#inicio">Inicio</a>
     <a href="#recomendaciones">Recomendaciones</a>
@@ -231,7 +221,6 @@
 
   <main>
 
-    <!-- NIVEL 1 — intro + lista + imagen + enlace -->
     <section id="recomendaciones">
       <h2>Mis recomendaciones</h2>
       <p>
@@ -252,12 +241,10 @@
       </p>
     </section>
 
-    <!-- NIVEL 2 — sección 1 con article destacado -->
     <section>
       <h2>El mejor de todos</h2>
       <p>De todos los juegos que probé, hay uno que no se parece a ningún otro.</p>
 
-      <!-- ARTICLE — recomendación destacada -->
       <article>
         <h3>⭐ Sekiro: Shadows Die Twice</h3>
         <p>
@@ -269,7 +256,6 @@
       </article>
     </section>
 
-    <!-- NIVEL 2 — sección 2: juegos que querés probar -->
     <section>
       <h2>En la lista de pendientes</h2>
       <p>Estos son juegos que tengo en el radar y que todavía no pude jugar pero quiero probar.</p>
@@ -280,7 +266,6 @@
       </ul>
     </section>
 
-    <!-- NIVEL 3 — TOP 3 con tamaños diferenciados -->
     <section id="top3">
       <h2>Top 3 personal</h2>
       <p>Mi ranking definitivo, sin discusión posible.</p>
@@ -310,7 +295,6 @@
       </div>
     </section>
 
-    <!-- NIVEL 3 — Tabla comparativa -->
     <section>
       <h2>Comparativa</h2>
       <table>
@@ -341,16 +325,12 @@
       </table>
     </section>
 
-    <!-- NIVEL 3 — Elementos estructurales nuevos -->
 
-    <!-- <figure> y <figcaption>: imagen con descripción asociada -->
     <figure style="margin:0;">
       <img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/225540/header.jpg" alt="Just Cause 3">
-      <!-- <figcaption> es la etiqueta para el pie de una imagen o figura -->
       <figcaption style="color:#555; font-size:0.8rem; margin-top:6px;">Just Cause 3 — explosiones garantizadas</figcaption>
     </figure>
 
-    <!-- <aside>: contenido secundario relacionado pero no esencial -->
     <aside style="background:#111; border:1px solid #222; border-radius:4px; padding:20px;">
       <h2 style="margin-bottom:12px;">¿Sabías que...?</h2>
       <p>Crysis fue lanzado en 2007 y durante años fue el benchmark estándar para testear computadoras nuevas. La frase "¿pero puede correr Crysis?" se volvió un meme histórico en la comunidad gamer.</p>
@@ -358,11 +338,9 @@
 
   </main>
 
-  <!-- FOOTER con nombre, año y mapa -->
   <footer id="pie">
     <p>Hecho por Max · 2026</p>
     <p style="margin: 12px 0 16px;">📍 Ubicación</p>
-    <!-- <iframe> incrusta contenido externo, en este caso un mapa de Google Maps -->
     <iframe
       src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3344.0!2d-56.7139!3d-34.3316!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95a1b8b0b0b0b0b1%3A0x1!2sSan+Jos%C3%A9+de+Mayo%2C+Uruguay!5e0!3m2!1ses!2suy!4v1234567890"
       allowfullscreen=""
