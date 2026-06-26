@@ -1,0 +1,422 @@
+/* ============ TOKENS DE DISEÑO ============ */
+:root {
+  --bg: #0f1419;
+  --bg-panel: #1b2838;
+  --bg-panel-alt: #223349;
+  --texto: #c7d5e0;
+  --texto-tenue: #8a9aab;
+  --dorado: #c9a227;
+  --celeste: #66c0f4;
+  --borde: #2a3b4d;
+  --rojo-dificil: #d9534f;
+  --amarillo-medio: #e3b341;
+  --verde-facil: #4caf7d;
+  --sombra: rgba(0, 0, 0, 0.35);
+}
+
+[data-tema="claro"] {
+  --bg: #eef1f5;
+  --bg-panel: #ffffff;
+  --bg-panel-alt: #f4f6f9;
+  --texto: #1b2838;
+  --texto-tenue: #5b6b7c;
+  --borde: #d7dce2;
+  --sombra: rgba(20, 30, 45, 0.12);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--texto);
+  font-family: "Inter", Arial, sans-serif;
+  transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+h1, h2, h3 {
+  font-family: "Rajdhani", sans-serif;
+  font-weight: 700;
+}
+
+/* ============ TOPBAR ============ */
+.topbar {
+  background-color: var(--bg-panel);
+  border-bottom: 1px solid var(--borde);
+}
+
+.topbar-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 14px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: "Rajdhani", sans-serif;
+  font-size: 1.4rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.brand-icon {
+  color: var(--dorado);
+  font-size: 1.3rem;
+}
+
+.brand-accent {
+  color: var(--celeste);
+}
+
+.theme-toggle {
+  background-color: var(--bg-panel-alt);
+  border: 1px solid var(--borde);
+  border-radius: 50%;
+  width: 38px;
+  height: 38px;
+  cursor: pointer;
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.15s ease, border-color 0.15s ease;
+}
+
+.theme-toggle:hover {
+  border-color: var(--dorado);
+  transform: rotate(15deg);
+}
+
+/* ============ HERO ============ */
+.hero {
+  background: linear-gradient(180deg, var(--bg-panel) 0%, var(--bg) 100%);
+  border-bottom: 1px solid var(--borde);
+  padding: 50px 20px 36px;
+}
+
+.hero-inner {
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 2.4rem;
+  letter-spacing: 0.5px;
+}
+
+.hero-highlight {
+  color: var(--dorado);
+}
+
+.hero-sub {
+  color: var(--texto-tenue);
+  font-size: 1rem;
+  margin-top: 12px;
+  max-width: 620px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ---- Buscador ---- */
+.search-bar {
+  margin-top: 28px;
+  max-width: 480px;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  align-items: center;
+  background-color: var(--bg-panel-alt);
+  border: 1px solid var(--borde);
+  border-radius: 8px;
+  padding: 10px 14px;
+  gap: 10px;
+}
+
+.search-icon {
+  opacity: 0.7;
+}
+
+.search-bar input {
+  background: none;
+  border: none;
+  outline: none;
+  color: var(--texto);
+  font-family: "Inter", sans-serif;
+  font-size: 0.95rem;
+  width: 100%;
+}
+
+.search-bar input::placeholder {
+  color: var(--texto-tenue);
+}
+
+/* ---- Filtros (chips) ---- */
+.filtros {
+  margin-top: 22px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.filtros-label {
+  color: var(--texto-tenue);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-right: 4px;
+}
+
+.filtros-label-tiempo {
+  margin-left: 10px;
+}
+
+.chip {
+  background-color: var(--bg-panel-alt);
+  border: 1px solid var(--borde);
+  color: var(--texto);
+  border-radius: 20px;
+  padding: 6px 14px;
+  font-size: 0.82rem;
+  cursor: pointer;
+  font-family: "Inter", sans-serif;
+  transition: border-color 0.15s ease, background-color 0.15s ease;
+}
+
+.chip:hover {
+  border-color: var(--celeste);
+}
+
+.chip.activo {
+  background-color: var(--celeste);
+  color: #0f1419;
+  border-color: var(--celeste);
+  font-weight: 600;
+}
+
+/* ============ CONTADOR DE RESULTADOS ============ */
+.resultados-info {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px 20px 0;
+  color: var(--texto-tenue);
+  font-size: 0.85rem;
+}
+
+/* ============ GRILLA ============ */
+.grilla {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 16px 20px 50px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.ficha {
+  background-color: var(--bg-panel);
+  border: 1px solid var(--borde);
+  border-radius: 10px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+}
+
+.ficha:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 24px var(--sombra);
+  border-color: var(--dorado);
+}
+
+.ficha-banner {
+  height: 110px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.6rem;
+}
+
+.banner-hollowknight { background: linear-gradient(135deg, #1a1a2e, #3d2a52); }
+.banner-stardew      { background: linear-gradient(135deg, #355e3b, #7fae5b); }
+.banner-portal        { background: linear-gradient(135deg, #1c3b57, #4a90c2); }
+.banner-eldenring    { background: linear-gradient(135deg, #2b2412, #6b5a2e); }
+.banner-hades        { background: linear-gradient(135deg, #3a0f0f, #8c2f2f); }
+.banner-shorthike    { background: linear-gradient(135deg, #234d63, #6fb4a8); }
+
+.ficha-cuerpo {
+  padding: 16px 18px 20px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.ficha-titulo-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.ficha-titulo-row h2 {
+  font-size: 1.25rem;
+}
+
+.badge-dificultad {
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 3px 9px;
+  border-radius: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+  white-space: nowrap;
+}
+
+.dif-baja  { background-color: rgba(76, 175, 125, 0.18); color: var(--verde-facil); }
+.dif-media { background-color: rgba(227, 179, 65, 0.18); color: var(--amarillo-medio); }
+.dif-alta  { background-color: rgba(217, 83, 79, 0.18); color: var(--rojo-dificil); }
+
+.ficha-genero {
+  color: var(--texto-tenue);
+  font-size: 0.82rem;
+  margin-top: 2px;
+}
+
+.ficha-stats {
+  display: flex;
+  gap: 18px;
+  margin-top: 14px;
+}
+
+.stat {
+  display: flex;
+  flex-direction: column;
+}
+
+.stat-valor {
+  font-family: "Rajdhani", sans-serif;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--dorado);
+}
+
+.stat-label {
+  font-size: 0.7rem;
+  color: var(--texto-tenue);
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+}
+
+/* ---- Medidor de dificultad (firma visual) ---- */
+.medidor {
+  display: flex;
+  gap: 4px;
+  margin-top: 14px;
+}
+
+.medidor .barra {
+  height: 6px;
+  flex: 1;
+  background-color: var(--borde);
+  border-radius: 3px;
+}
+
+.medidor .barra.activa {
+  background-color: var(--dorado);
+}
+
+.ficha-nota {
+  font-size: 0.85rem;
+  color: var(--texto-tenue);
+  margin-top: 14px;
+  line-height: 1.5;
+  flex: 1;
+}
+
+.ficha-link {
+  margin-top: 16px;
+  display: inline-block;
+  color: var(--celeste);
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.ficha-link:hover {
+  text-decoration: underline;
+}
+
+/* ============ SIN RESULTADOS ============ */
+.sin-resultados {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px 60px;
+  text-align: center;
+  color: var(--texto-tenue);
+  font-size: 0.95rem;
+}
+
+/* ============ FOOTER ============ */
+.footer {
+  background-color: var(--bg-panel);
+  border-top: 1px solid var(--borde);
+  padding: 36px 20px 50px;
+}
+
+.footer-inner {
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+.footer-inner h3 {
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+}
+
+.footer-inner p {
+  font-size: 0.85rem;
+  color: var(--texto-tenue);
+  line-height: 1.6;
+  margin-top: 8px;
+}
+
+.footer-ia {
+  border-top: 1px dashed var(--borde);
+  padding-top: 14px;
+  margin-top: 16px;
+}
+
+.footer-ia strong {
+  color: var(--texto);
+}
+
+/* ============ RESPONSIVE ============ */
+@media (max-width: 600px) {
+  .hero h1 {
+    font-size: 1.8rem;
+  }
+
+  .filtros {
+    justify-content: flex-start;
+  }
+
+  .filtros-label-tiempo {
+    margin-left: 0;
+    width: 100%;
+    margin-top: 6px;
+  }
+
+  .grilla {
+    grid-template-columns: 1fr;
+  }
+}

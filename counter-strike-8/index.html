@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Platino Vault — Guías de logros para Steam</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- ============ HEADER ============ -->
+  <header class="topbar">
+    <div class="topbar-inner">
+      <div class="brand">
+        <span class="brand-icon">⛨</span>
+        <span class="brand-name">Platino<span class="brand-accent">Vault</span></span>
+      </div>
+      <button id="theme-toggle" class="theme-toggle" aria-label="Cambiar tema claro/oscuro">
+        <span id="theme-icon">🌙</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ============ HERO ============ -->
+  <section class="hero">
+    <div class="hero-inner">
+      <h1>Encontrá tu próximo <span class="hero-highlight">100%</span></h1>
+      <p class="hero-sub">
+        Guías curadas para completar todos los logros de tus juegos de Steam favoritos:
+        dificultad real, horas estimadas y la mejor guía externa para cada uno.
+      </p>
+
+      <div class="search-bar">
+        <span class="search-icon">🔍</span>
+        <input type="text" id="buscador" placeholder="Buscar un juego... (ej: Hades, Elden Ring)">
+      </div>
+
+      <div class="filtros" id="filtros">
+        <span class="filtros-label">Dificultad:</span>
+        <button class="chip activo" data-filtro-dif="todas">Todas</button>
+        <button class="chip" data-filtro-dif="baja">Baja</button>
+        <button class="chip" data-filtro-dif="media">Media</button>
+        <button class="chip" data-filtro-dif="alta">Alta</button>
+
+        <span class="filtros-label filtros-label-tiempo">Duración:</span>
+        <button class="chip activo" data-filtro-tiempo="todas">Todas</button>
+        <button class="chip" data-filtro-tiempo="corta">Corta (&lt;10h)</button>
+        <button class="chip" data-filtro-tiempo="media">Media (10-80h)</button>
+        <button class="chip" data-filtro-tiempo="larga">Larga (80h+)</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CONTADOR DE RESULTADOS ============ -->
+  <div class="resultados-info">
+    <span id="contador-resultados">6 guías encontradas</span>
+  </div>
+
+  <!-- ============ GRILLA DE JUEGOS ============ -->
+  <main class="grilla" id="grilla">
+
+    <!-- HOLLOW KNIGHT -->
+    <article class="ficha" data-nombre="hollow knight metroidvania bichos" data-dificultad="alta" data-tiempo="larga" data-horas="130">
+      <div class="ficha-banner banner-hollowknight">
+        <span class="ficha-icono">🗡️</span>
+      </div>
+      <div class="ficha-cuerpo">
+        <div class="ficha-titulo-row">
+          <h2>Hollow Knight</h2>
+          <span class="badge-dificultad dif-alta">Difícil</span>
+        </div>
+        <p class="ficha-genero">Metroidvania · Acción 2D</p>
+
+        <div class="ficha-stats">
+          <div class="stat">
+            <span class="stat-valor">63</span>
+            <span class="stat-label">Logros</span>
+          </div>
+          <div class="stat">
+            <span class="stat-valor">~130h</span>
+            <span class="stat-label">Para el 100%</span>
+          </div>
+        </div>
+
+        <div class="medidor" title="Dificultad: Alta">
+          <span class="barra activa"></span>
+          <span class="barra activa"></span>
+          <span class="barra activa"></span>
+          <span class="barra activa"></span>
+          <span class="barra"></span>
+        </div>
+
+        <p class="ficha-nota">
+          Exige dominar el combate y explorar Hallownest casi por completo. Los jefes
+          del Panteón de los Sabios y el reto de los Caballeros del Sueño son la parte
+          más dura del 100%.
+        </p>
+
+        <a href="https://hollowknight.fandom.com/wiki/Achievements" target="_blank" rel="noopener" class="ficha-link">
+          Ver guía completa ↗
+        </a>
+      </div>
+    </article>
+
+    <!-- STARDEW VALLEY -->
+    <article class="ficha" data-nombre="stardew valley granja simulacion" data-dificultad="media" data-tiempo="larga" data-horas="100">
+      <div class="ficha-banner banner-stardew">
+        <span class="ficha-icono">🌾</span>
+      </div>
+      <div class="ficha-cuerpo">
+        <div class="ficha-titulo-row">
+          <h2>Stardew Valley</h2>
+          <span class="badge-dificultad dif-media">Media</span>
+        </div>
+        <p class="ficha-genero">Simulación · Granja</p>
+
+        <div class="ficha-stats">
+          <div class="stat">
+            <span class="stat-valor">49</span>
+            <span class="stat-label">Logros</span>
+          </div>
+          <div class="stat">
+            <span class="stat-valor">~100h</span>
+            <span class="stat-label">Para el 100%</span>
+          </div>
+        </div>
+
+        <div class="medidor" title="Dificultad: Media">
+          <span class="barra activa"></span>
+          <span class="barra activa"></span>
+          <span class="barra activa"></span>
+          <span class="barra"></span>
+          <span class="barra"></span>
+        </div>
+
+        <p class="ficha-nota">
+          No es difícil mecánicamente, pero requiere planificación a largo plazo:
+          subir todas las habilidades, completar el museo y lograr la "Perfección"
+          del pueblo.
+        </p>
+
+        <a href="https://stardewvalleywiki.com/Achievements" target="_blank" rel="noopener" class="ficha-link">
+          Ver guía completa ↗
+        </a>
+      </div>
+    </article>
+
+    <!-- PORTAL 2 -->
+    <article class="ficha" data-nombre="portal 2 puzzle cooperativo" data-dificultad="baja" data-tiempo="media" data-horas="23">
+      <div class="ficha-banner banner-portal">
+        <span class="ficha-icono">🌀</span>
+      </div>
+      <div class="ficha-cuerpo">
+        <div class="ficha-titulo-row">
+          <h2>Portal 2</h2>
+          <span class="badge-dificultad dif-baja">Fácil</span>
+        </div>
+        <p class="ficha-genero">Puzzle · Primera persona</p>
+
+        <div class="ficha-stats">
+          <div class="stat">
+            <span class="stat-valor">51</span>
+            <span class="stat-label">Logros</span>
+          </div>
+          <div class="stat">
+            <span class="stat-valor">~23h</span>
+            <span class="stat-label">Para el 100%</span>
+          </div>
+        </div>
+
+        <div class="medidor" title="Dificultad: Baja">
+          <span class="barra activa"></span>
+          <span class="barra activa"></span>
+          <span class="barra"></span>
+          <span class="barra"></span>
+          <span class="barra"></span>
+        </div>
+
+        <p class="ficha-nota">
+          El modo historia es accesible para casi cualquiera. El único obstáculo real
+          es que parte de los logros cooperativos necesitan que un amigo también
+          tenga el juego.
+        </p>
+
+        <a href="https://theportalwiki.com/wiki/Obtaining_Portal_2_achievements" target="_blank" rel="noopener" class="ficha-link">
+          Ver guía completa ↗
+        </a>
+      </div>
+    </article>
+
+    <!-- ELDEN RING -->
+    <article class="ficha" data-nombre="elden ring souls rpg jefes" data-dificultad="alta" data-tiempo="larga" data-horas="110">
+      <div class="ficha-banner banner-eldenring">
+        <span class="ficha-icono">👑</span>
+      </div>
+      <div class="ficha-cuerpo">
+        <div class="ficha-titulo-row">
+          <h2>Elden Ring</h2>
+          <span class="badge-dificultad dif-alta">Difícil</span>
+        </div>
+        <p class="ficha-genero">RPG de acción · Souls-like</p>
+
+        <div class="ficha-stats">
+          <div class="stat">
+            <span class="stat-valor">42</span>
+            <span class="stat-label">Logros</span>
+          </div>
+          <div class="stat">
+            <span class="stat-valor">~110h</span>
+            <span class="stat-label">Para el 100%</span>
+          </div>
+        </div>
+
+        <div class="medidor" title="Dificultad: Alta">
+          <span class="barra activa"></span>
+          <span class="barra activa"></span>
+          <span class="barra activa"></span>
+          <span class="barra activa"></span>
+          <span class="barra"></span>
+        </div>
+
+        <p class="ficha-nota">
+          Necesita entre 2 y 3 vueltas completas para conseguir los 3 finales y
+          derrotar a todos los semidioses. La curva de dificultad de los jefes
+          tardíos es alta.
+        </p>
+
+        <a href="https://eldenring.wiki.fextralife.com/Trophy+&+Achievement+Guide" target="_blank" rel="noopener" class="ficha-link">
+          Ver guía completa ↗
+        </a>
+      </div>
+    </article>
+
+    <!-- HADES -->
+    <article class="ficha" data-nombre="hades roguelite accion mitologia" data-dificultad="alta" data-tiempo="larga" data-horas="80">
+      <div class="ficha-banner banner-hades">
+        <span class="ficha-icono">🔥</span>
+      </div>
+      <div class="ficha-cuerpo">
+        <div class="ficha-titulo-row">
+          <h2>Hades</h2>
+          <span class="badge-dificultad dif-alta">Difícil</span>
+        </div>
+        <p class="ficha-genero">Roguelite · Acción</p>
+
+        <div class="ficha-stats">
+          <div class="stat">
+            <span class="stat-valor">49</span>
+            <span class="stat-label">Logros</span>
+          </div>
+          <div class="stat">
+            <span class="stat-valor">~80h</span>
+            <span class="stat-label">Para el 100%</span>
+          </div>
+        </div>
+
+        <div class="medidor" title="Dificultad: Alta">
+          <span class="barra activa"></span>
+          <span class="barra activa"></span>
+          <span class="barra activa"></span>
+          <span class="barra activa"></span>
+          <span class="barra"></span>
+        </div>
+
+        <p class="ficha-nota">
+          Ningún logro es perdible, pero hacen falta más de 80 escapadas del
+          Inframundo para subir de nivel todas las armas y completar las profecías.
+        </p>
+
+        <a href="https://hades.fandom.com/wiki/Achievements" target="_blank" rel="noopener" class="ficha-link">
+          Ver guía completa ↗
+        </a>
+      </div>
+    </article>
+
+    <!-- A SHORT HIKE -->
+    <article class="ficha" data-nombre="a short hike exploracion relax indie" data-dificultad="baja" data-tiempo="corta" data-horas="4">
+      <div class="ficha-banner banner-shorthike">
+        <span class="ficha-icono">🏔️</span>
+      </div>
+      <div class="ficha-cuerpo">
+        <div class="ficha-titulo-row">
+          <h2>A Short Hike</h2>
+          <span class="badge-dificultad dif-baja">Fácil</span>
+        </div>
+        <p class="ficha-genero">Exploración · Indie relajado</p>
+
+        <div class="ficha-stats">
+          <div class="stat">
+            <span class="stat-valor">12</span>
+            <span class="stat-label">Logros</span>
+          </div>
+          <div class="stat">
+            <span class="stat-valor">~4h</span>
+            <span class="stat-label">Para el 100%</span>
+          </div>
+        </div>
+
+        <div class="medidor" title="Dificultad: Baja">
+          <span class="barra activa"></span>
+          <span class="barra"></span>
+          <span class="barra"></span>
+          <span class="barra"></span>
+          <span class="barra"></span>
+        </div>
+
+        <p class="ficha-nota">
+          Ideal para una tarde tranquila. No hay logros perdibles ni mecánicas
+          difíciles, solo explorar la montaña a fondo.
+        </p>
+
+        <a href="https://truesteamachievements.com/game/A-Short-Hike/achievements" target="_blank" rel="noopener" class="ficha-link">
+          Ver guía completa ↗
+        </a>
+      </div>
+    </article>
+
+  </main>
+
+  <p class="sin-resultados" id="sin-resultados" hidden>
+    No encontramos ningún juego que coincida con tu búsqueda.
+  </p>
+
+  <!-- ============ FOOTER / TRANSPARENCIA SOBRE USO DE IA ============ -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <h3>Sobre este proyecto</h3>
+      <p>
+        Trabajo individual para la materia, sobre una idea propia: una guía de logros
+        de Steam que reúne en un solo lugar la dificultad, las horas estimadas y el
+        link a la mejor guía de cada juego, para no tener que buscar en varias páginas
+        a la vez.
+      </p>
+      <p class="footer-ia">
+        <strong>Uso de Inteligencia Artificial:</strong> usé IA (Claude) como asistente
+        para escribir el código HTML/CSS/JS y para buscar y verificar los datos reales
+        de logros y horas de cada juego (cantidad de logros, tiempo estimado de 100% y
+        nivel de dificultad). La idea del proyecto, el tema elegido, la selección de
+        los 6 juegos y las decisiones de diseño (colores, layout, qué mostrar en cada
+        ficha) son propias.
+      </p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
