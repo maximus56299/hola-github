@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chiste al azar - JokeAPI</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <div class="container">
+    <h1>😂 Chiste al azar</h1>
+    <p class="descripcion">Pedí un chiste random consumiendo la <strong>JokeAPI</strong>.</p>
+
+    <!-- NIVEL 2: Opciones -->
+    <div class="opciones">
+      <div class="opcion">
+        <label for="categoria">Categoría:</label>
+        <select id="categoria">
+          <option value="Any">Any</option>
+          <option value="Programming">Programming</option>
+          <option value="Misc">Misc</option>
+          <option value="Pun">Pun</option>
+          <option value="Spooky">Spooky</option>
+          <option value="Christmas">Christmas</option>
+        </select>
+      </div>
+
+      <div class="opcion">
+        <label for="tipo">Tipo:</label>
+        <select id="tipo">
+          <option value="">Cualquiera</option>
+          <option value="single">Single</option>
+          <option value="twopart">Two part</option>
+        </select>
+      </div>
+
+      <!-- NIVEL 3: Idioma -->
+      <div class="opcion">
+        <label for="idioma">Idioma:</label>
+        <select id="idioma">
+          <option value="en">Inglés</option>
+          <option value="es">Español</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- NIVEL 3: Filtros de contenido -->
+    <fieldset class="filtros">
+      <legend>Evitar estos tipos de contenido:</legend>
+      <label><input type="checkbox" value="nsfw" class="flag"> NSFW</label>
+      <label><input type="checkbox" value="religious" class="flag"> Religioso</label>
+      <label><input type="checkbox" value="political" class="flag"> Político</label>
+      <label><input type="checkbox" value="racist" class="flag"> Racista</label>
+      <label><input type="checkbox" value="sexist" class="flag"> Sexista</label>
+      <label><input type="checkbox" value="explicit" class="flag"> Explícito</label>
+    </fieldset>
+
+    <button id="btnTraerChiste">Traer chiste</button>
+
+    <div id="jokeContainer" class="joke-container"></div>
+
+    <p id="loadingMessage" class="loading-message hidden">Cargando chiste...</p>
+    <p id="errorMessage" class="error-message"></p>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
