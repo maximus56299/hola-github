@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lista de Tareas - Práctica DOM</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <div class="container">
+    <h1>📝 Mi lista de tareas</h1>
+
+    <!-- NIVEL 1: Formulario para agregar tareas -->
+    <form id="taskForm" novalidate>
+      <div class="form-row">
+        <input type="text" id="taskInput" placeholder="Escribe una tarea nueva...">
+        <button type="submit" id="btnAgregar">Agregar</button>
+      </div>
+      <span class="error-message" id="errorTask"></span>
+    </form>
+
+    <!-- NIVEL 3: Contador -->
+    <div class="counters">
+      <div class="counter-box">
+        <span class="counter-number" id="countTotal">0</span>
+        <span class="counter-label">Total</span>
+      </div>
+      <div class="counter-box">
+        <span class="counter-number" id="countCompletadas">0</span>
+        <span class="counter-label">Completadas</span>
+      </div>
+      <div class="counter-box">
+        <span class="counter-number" id="countPendientes">0</span>
+        <span class="counter-label">Pendientes</span>
+      </div>
+    </div>
+
+    <!-- NIVEL 3: Filtros -->
+    <div class="filters">
+      <button class="filter-btn active" data-filter="todas">Todas</button>
+      <button class="filter-btn" data-filter="completadas">Completadas</button>
+      <button class="filter-btn" data-filter="pendientes">Pendientes</button>
+    </div>
+
+    <!-- Lista de tareas -->
+    <ul id="taskList"></ul>
+
+    <p class="empty-message" id="emptyMessage">No hay tareas para mostrar.</p>
+
+    <!-- NIVEL 3: Borrar todas las tareas -->
+    <button id="btnBorrarTodas" class="btn-borrar-todas">🗑️ Borrar todas las tareas</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
