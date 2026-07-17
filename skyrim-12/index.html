@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mi colección favorita</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <div class="page">
+
+    <button id="btnModo" class="btn-modo">🌙 Cambiar modo</button>
+
+    <header>
+      <h1>Mi colección favorita</h1>
+      <p class="descripcion">
+        Guardá acá tus videojuegos, películas y series favoritas: agregá una calificación,
+        una imagen y llevá el seguimiento de si ya los terminaste, los estás disfrutando
+        o todavía están en tu lista pendiente.
+      </p>
+    </header>
+
+    <!-- NIVEL 1: Formulario -->
+    <form id="collectionForm" novalidate>
+      <div class="form-row">
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" placeholder="Ej: The Last of Us">
+      </div>
+
+      <div class="form-row">
+        <label for="descripcion">Descripción breve:</label>
+        <input type="text" id="descripcion" placeholder="Una breve descripción...">
+      </div>
+
+      <div class="form-row">
+        <label for="tipo">Tipo:</label>
+        <select id="tipo">
+          <option value="videojuego">Videojuego</option>
+          <option value="pelicula">Película</option>
+          <option value="serie">Serie</option>
+          <option value="otro">Otro</option>
+        </select>
+      </div>
+
+      <div class="form-row hidden" id="otroTipoRow">
+        <label for="otroTipo">Especificá el tipo:</label>
+        <input type="text" id="otroTipo" placeholder="Ej: Libro, Anime, etc.">
+      </div>
+
+      <div class="form-row">
+        <label for="estado">Estado:</label>
+        <select id="estado">
+          <option value="pendiente">Pendiente</option>
+          <option value="en-progreso">En progreso / Viendo / Jugando</option>
+          <option value="terminado">Terminado</option>
+        </select>
+      </div>
+
+      <div class="form-row">
+        <label for="calificacion">Calificación (1 al 5):</label>
+        <input type="number" id="calificacion" min="1" max="5" placeholder="1 a 5">
+      </div>
+
+      <div class="form-row">
+        <label for="imagen">Imagen (URL):</label>
+        <input type="text" id="imagen" placeholder="https://...">
+      </div>
+
+      <button type="submit" id="btnAgregar">Agregar a la colección</button>
+
+      <p class="error-message" id="errorMessage"></p>
+    </form>
+
+    <p class="counter" id="counter">Elementos agregados: 0</p>
+
+    <!-- NIVEL 3: Filtros -->
+    <div class="filters">
+      <button class="filter-btn active" data-filter="todos">Todos</button>
+      <button class="filter-btn" data-filter="videojuego">Videojuegos</button>
+      <button class="filter-btn" data-filter="pelicula">Películas</button>
+      <button class="filter-btn" data-filter="serie">Series</button>
+      <button class="filter-btn" data-filter="favoritos">Favoritos</button>
+      <button class="filter-btn" data-filter="pendiente">Pendientes</button>
+      <button class="filter-btn" data-filter="en-progreso">En progreso</button>
+      <button class="filter-btn" data-filter="terminado">Terminados</button>
+    </div>
+
+    <!-- NIVEL 2: Sección donde aparecerán las tarjetas -->
+    <section id="cardsContainer" class="cards-container"></section>
+
+    <p class="empty-message" id="emptyMessage">Todavía no agregaste elementos a tu colección.</p>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,297 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #f4f6f8;
+  color: #222;
+  margin: 0;
+  padding: 20px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.page {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.btn-modo {
+  display: block;
+  margin-left: auto;
+  margin-bottom: 15px;
+  padding: 8px 14px;
+  border: none;
+  border-radius: 6px;
+  background-color: #333;
+  color: #fff;
+  cursor: pointer;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+header h1 {
+  margin-bottom: 6px;
+}
+
+.descripcion {
+  color: #555;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Formulario */
+#collectionForm {
+  background-color: #fff;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+  margin-bottom: 15px;
+}
+
+.form-row {
+  margin-bottom: 14px;
+}
+
+.form-row.hidden {
+  display: none;
+}
+
+label {
+  display: block;
+  margin-bottom: 4px;
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+
+input[type="text"],
+input[type="number"],
+select {
+  width: 100%;
+  padding: 9px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 0.95rem;
+}
+
+input.input-error,
+select.input-error {
+  border-color: #d9534f;
+}
+
+button {
+  padding: 9px 16px;
+  border: none;
+  border-radius: 6px;
+  background-color: #4a90e2;
+  color: #fff;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+button:hover {
+  background-color: #357ab8;
+}
+
+#btnAgregar {
+  width: 100%;
+}
+
+.error-message {
+  color: #d9534f;
+  font-size: 0.85rem;
+  min-height: 18px;
+  margin: 8px 0 0 0;
+}
+
+.counter {
+  text-align: center;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+/* Filtros */
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.filter-btn {
+  background-color: #e6e6e6;
+  color: #333;
+  font-size: 0.85rem;
+}
+
+.filter-btn:hover {
+  background-color: #d5d5d5;
+}
+
+.filter-btn.active {
+  background-color: #4a90e2;
+  color: #fff;
+}
+
+/* Tarjetas */
+.cards-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 16px;
+}
+
+.card {
+  background-color: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+}
+
+.card-img {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+  background-color: #ddd;
+}
+
+.card-body {
+  padding: 12px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-title {
+  margin: 0 0 6px 0;
+  font-size: 1.05rem;
+  cursor: pointer;
+  transition: color 0.2s ease, font-size 0.2s ease;
+}
+
+.card-title.destacado {
+  color: #e67e22;
+  text-decoration: underline;
+  font-size: 1.2rem;
+}
+
+.card-descripcion {
+  font-size: 0.85rem;
+  color: #555;
+  margin: 0 0 8px 0;
+}
+
+.card-meta {
+  font-size: 0.8rem;
+  color: #666;
+  margin-bottom: 4px;
+}
+
+.card-calificacion {
+  color: #f5a623;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.card-estado {
+  display: inline-block;
+  padding: 3px 8px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+  align-self: flex-start;
+}
+
+.card-estado.pendiente {
+  background-color: #fce8b2;
+  color: #7a5c00;
+}
+
+.card-estado.en-progreso {
+  background-color: #cfe8fc;
+  color: #0b5b8a;
+}
+
+.card-estado.terminado {
+  background-color: #cdeccd;
+  color: #2c662c;
+}
+
+.card-buttons {
+  display: flex;
+  gap: 6px;
+  margin-top: auto;
+}
+
+.btn-eliminar {
+  background-color: #d9534f;
+  flex: 1;
+}
+
+.btn-eliminar:hover {
+  background-color: #c9302c;
+}
+
+.btn-cambiar-estado {
+  background-color: #5cb85c;
+  flex: 1;
+}
+
+.btn-cambiar-estado:hover {
+  background-color: #4a9d4a;
+}
+
+.card.hidden {
+  display: none;
+}
+
+.empty-message {
+  text-align: center;
+  color: #999;
+  margin-top: 20px;
+}
+
+.empty-message.hidden {
+  display: none;
+}
+
+/* MODO OSCURO */
+body.dark-mode {
+  background-color: #121212;
+  color: #f0f0f0;
+}
+
+body.dark-mode #collectionForm,
+body.dark-mode .card {
+  background-color: #1e1e1e;
+  box-shadow: none;
+  border: 1px solid #333;
+}
+
+body.dark-mode input,
+body.dark-mode select {
+  background-color: #2a2a2a;
+  color: #f0f0f0;
+  border-color: #444;
+}
+
+body.dark-mode .descripcion,
+body.dark-mode .card-descripcion,
+body.dark-mode .card-meta {
+  color: #bbb;
+}
+
+body.dark-mode .filter-btn {
+  background-color: #2a2a2a;
+  color: #eee;
+}
+
+body.dark-mode .filter-btn.active {
+  background-color: #4a90e2;
+}
