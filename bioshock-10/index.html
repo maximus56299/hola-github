@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Práctica DOM con JavaScript</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <button id="btnDarkMode" class="btn-dark-mode">🌙 Modo oscuro</button>
+
+  <header>
+    <h1 id="mainTitle">Título original</h1>
+    <p id="mainParagraph">Este es el párrafo original. Su contenido puede cambiar con innerHTML.</p>
+  </header>
+
+  <!-- NIVEL 1 -->
+  <section class="card">
+    <h2>Nivel 1</h2>
+
+    <div class="control-group">
+      <label for="newTitleInput">Nuevo texto para el título (textContent):</label>
+      <input type="text" id="newTitleInput" placeholder="Escribe un nuevo título">
+      <button id="btnChangeTitle">Cambiar título</button>
+    </div>
+
+    <div class="control-group">
+      <label for="newParagraphInput">Nuevo contenido HTML para el párrafo (innerHTML):</label>
+      <input type="text" id="newParagraphInput" placeholder="Ej: <b>texto en negrita</b>">
+      <button id="btnChangeParagraph">Cambiar párrafo</button>
+    </div>
+
+    <div class="control-group">
+      <img id="mainImage" src="https://placehold.co/300x200?text=Imagen+1" alt="Imagen de ejemplo">
+      <button id="btnChangeImage">Cambiar imagen</button>
+    </div>
+
+    <div class="control-group">
+      <label for="alertInput">Escribe algo para mostrar en un alert:</label>
+      <input type="text" id="alertInput" placeholder="Escribe un mensaje">
+      <button id="btnShowAlert">Mostrar alert</button>
+    </div>
+
+    <div class="control-group">
+      <p id="classTarget" class="box">Elemento con clase (para agregar / quitar estilos)</p>
+      <button id="btnAddClass">Agregar clase (classList.add)</button>
+      <button id="btnRemoveClass">Quitar clase (classList.remove)</button>
+    </div>
+
+    <div class="control-group">
+      <label for="listInput">Nuevo elemento para la lista:</label>
+      <input type="text" id="listInput" placeholder="Escribe un ítem">
+      <button id="btnAddListItem">Agregar a la lista (createElement + appendChild)</button>
+      <ul id="itemList"></ul>
+    </div>
+  </section>
+
+  <!-- NIVEL 3 -->
+  <section class="card">
+    <h2>Nivel 3 - Formulario</h2>
+
+    <form id="mainForm" novalidate>
+      <div class="control-group">
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre">
+        <span class="error-message" id="errorNombre"></span>
+      </div>
+
+      <div class="control-group">
+        <label for="colorFavorito">Color favorito:</label>
+        <input type="text" id="colorFavorito" name="colorFavorito" placeholder="Ej: red, #ff0000, blue">
+        <span class="error-message" id="errorColor"></span>
+      </div>
+
+      <div class="control-group">
+        <label for="mensaje">Mensaje:</label>
+        <textarea id="mensaje" name="mensaje" rows="3"></textarea>
+        <span class="error-message" id="errorMensaje"></span>
+      </div>
+
+      <button type="submit" id="btnEnviar">Enviar</button>
+    </form>
+
+    <div id="resultado" class="resultado"></div>
+
+    <h3>Tarjetas generadas</h3>
+    <div id="cardsContainer" class="cards-container"></div>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
