@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gatos al azar - The Cat API</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <div class="container">
+    <h1>🐱 Gatos al azar</h1>
+    <p class="descripcion">Mirá un gato random y votá si te gusta o no.</p>
+
+    <button id="btnTraerGato">Traer gato</button>
+
+    <div class="image-wrapper">
+      <img id="catImage" class="cat-image hidden" src="" alt="Gato random">
+      <p id="loadingMessage" class="loading-message hidden">Cargando gato...</p>
+    </div>
+
+    <div class="votos">
+      <button id="btnMeGusta" class="btn-voto btn-like" disabled>👍 Me gusta</button>
+      <button id="btnNoMeGusta" class="btn-voto btn-dislike" disabled>👎 No me gusta</button>
+    </div>
+
+    <div class="contadores">
+      <div class="contador-box">
+        <span class="contador-numero" id="countLikes">0</span>
+        <span class="contador-label">Me gusta</span>
+      </div>
+      <div class="contador-box">
+        <span class="contador-numero" id="countDislikes">0</span>
+        <span class="contador-label">No me gusta</span>
+      </div>
+    </div>
+
+    <p id="votoMessage" class="voto-message"></p>
+    <p id="errorMessage" class="error-message"></p>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

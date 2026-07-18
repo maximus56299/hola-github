@@ -1,0 +1,147 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #f4f6f8;
+  color: #222;
+  margin: 0;
+  padding: 20px;
+}
+
+.container {
+  max-width: 420px;
+  margin: 0 auto;
+  background-color: #fff;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+  text-align: center;
+}
+
+h1 {
+  margin-top: 0;
+}
+
+.descripcion {
+  color: #555;
+  margin-bottom: 18px;
+}
+
+button {
+  padding: 10px 16px;
+  border: none;
+  border-radius: 6px;
+  background-color: #4a90e2;
+  color: #fff;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+button:hover:not(:disabled) {
+  background-color: #357ab8;
+}
+
+button:disabled {
+  background-color: #b9cbe4;
+  cursor: not-allowed;
+}
+
+#btnTraerGato {
+  width: 100%;
+  margin-bottom: 16px;
+}
+
+.image-wrapper {
+  min-height: 220px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f0f4f9;
+  border-radius: 10px;
+  margin-bottom: 16px;
+  overflow: hidden;
+}
+
+.cat-image {
+  width: 100%;
+  max-height: 300px;
+  object-fit: cover;
+  display: block;
+}
+
+.cat-image.hidden {
+  display: none;
+}
+
+.loading-message {
+  color: #4a90e2;
+}
+
+.loading-message.hidden {
+  display: none;
+}
+
+.votos {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.btn-voto {
+  flex: 1;
+}
+
+.btn-like {
+  background-color: #5cb85c;
+}
+
+.btn-like:hover:not(:disabled) {
+  background-color: #4a9d4a;
+}
+
+.btn-dislike {
+  background-color: #d9534f;
+}
+
+.btn-dislike:hover:not(:disabled) {
+  background-color: #c9302c;
+}
+
+.contadores {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.contador-box {
+  flex: 1;
+  background-color: #f0f4f9;
+  border-radius: 8px;
+  padding: 10px;
+}
+
+.contador-numero {
+  display: block;
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: #4a90e2;
+}
+
+.contador-label {
+  font-size: 0.8rem;
+  color: #666;
+}
+
+.voto-message {
+  color: #2c662c;
+  min-height: 18px;
+  font-size: 0.9rem;
+}
+
+.error-message {
+  color: #d9534f;
+  min-height: 18px;
+  font-size: 0.9rem;
+}
